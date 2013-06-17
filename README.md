@@ -11,7 +11,7 @@ This is a demo project to show how [Play2 templates](http://www.playframework.co
 
 ### Play2 plugin
 
-Play2 code that compiles templates is buried inside "sbt-plugin", so one needs to attach it to the SBT build, see [project/templates.sbt](blob/master/project/templates.sbt):
+Play2 code that compiles templates is buried inside "sbt-plugin", so one needs to attach it to the SBT build, see [project/templates.sbt](project/templates.sbt):
 
 ```scala
 addSbtPlugin("play" % "sbt-plugin" % "2.1.1")
@@ -39,7 +39,7 @@ sourceGenerators in Compile <+= (state, sourceDirectory in Compile, sourceManage
 
 (`play.Project.*` is provided by "sbt-plugin")
 
-The full example is here [project/Build.scala](blob/master/project/Build.scala)
+The full example is here [project/Build.scala](project/Build.scala)
 
 ## Runtime
 
@@ -87,7 +87,7 @@ object TextFormat extends Format[Text] {
 }
 ```
 
-See [src/main/scala/Text.scala](blob/master/src/main/scala/Text.scala)
+See [src/main/scala/Text.scala](src/main/scala/Text.scala)
 
 `templatePackages` and `templateFormats` in SBT build tell "sbt-plugin" what imports and types to use in the generated Scala files.
 
@@ -99,7 +99,7 @@ Trivial:
 println(views.html.hello("World").body)
 ```
 
-See [src/main/scala/Main.scala](blob/master/src/main/scala/Main.scala)
+See [src/main/scala/Main.scala](src/main/scala/Main.scala)
 
 ## Problems
 
