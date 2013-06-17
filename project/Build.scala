@@ -9,9 +9,7 @@ object PlayTemplateBuild extends Build {
   )
 
   lazy val projectSettings = buildSettings ++ templateSettings ++ Seq(
-    mainClass in Compile := Some("Main"),
-    resolvers += templatesResolver,
-    libraryDependencies += templatesLibrary
+    mainClass in Compile := Some("Main")
   )
 
   lazy val root = Project(
@@ -34,10 +32,12 @@ object Templates {
     }
   )
 
-  lazy val templateSettings = templateDefaults ++ Seq(
-    sourceGenerators in Compile <+= (state, sourceDirectory in Compile, sourceManaged in Compile, templateFormats, templatePackages) map play.Project.ScalaTemplates
-  )
-
   val templatesResolver = "Typesafe Releases Repository" at "http://repo.typesafe.com/typesafe/releases/"
   val templatesLibrary = "play" %% "templates" % play.core.PlayVersion.current
+
+  lazy val templateSettings = templateDefaults ++ Seq(
+    resolvers += templatesResolver,
+    libraryDependencies += templatesLibrary,
+    sourceGenerators in Compile <+= (state, sourceDirectory in Compile, sourceManaged in Compile, templateFormats, templatePackages) map play.Project.ScalaTemplates
+  )
 }
