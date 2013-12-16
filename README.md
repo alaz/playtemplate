@@ -5,7 +5,7 @@ Play2 templates are cool because they got compiled into Scala code and this Scal
 * statically checked with the application code
 * pre-compiled
 
-This is a demo project to show how [Play2 templates](http://www.playframework.com/documentation/2.1.0/ScalaTemplates) can be used in a standalone SBT project.
+This is a demo project to show how [Play2 templates](http://www.playframework.com/documentation/2.2.1/ScalaTemplates) can be used in a standalone SBT project.
 
 ## Build time
 
@@ -14,7 +14,7 @@ This is a demo project to show how [Play2 templates](http://www.playframework.co
 Play2 code that compiles templates is buried inside "sbt-plugin", so one needs to attach it to the SBT build, see [project/templates.sbt](project/templates.sbt):
 
 ```scala
-addSbtPlugin("play" % "sbt-plugin" % "2.1.1")
+addSbtPlugin("play" % "sbt-plugin" % "2.2.1")
 ```
 
 ### Source generation parameters
